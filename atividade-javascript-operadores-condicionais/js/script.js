@@ -28,10 +28,24 @@ console.log("=== INÍCIO DA ATIVIDADE 20: OPERADORES E CONDICIONAIS ===");
 console.log("--- Atividade 1: Desconto Progressivo ---");
 
 // TODO: Escreva seu código da Atividade 1 abaixo:
+const valorCompra = 250
+let porcentagemDesconto = 0
 
+if (valorCompra <= 100.00){
+    porcentagemDesconto = 0
+}
+else if (valorCompra >= 100.01 && valorCompra <= 300.00){
+    porcentagemDesconto = 0.10
+}
+else{
+    porcentagemDesconto = 0.15
+}
 
+let valorDesconto = valorCompra * porcentagemDesconto
+let valorFinal = valorCompra - valorDesconto
 
-
+console.log(`Compra: R$ ${valorCompra.toFixed(2)} | Desconto: R$ ${valorDesconto.toFixed(2)} | total a pagar:R$ ${valorFinal.toFixed(2)}}`)
+ 
 
 // =============================================================================
 // ATIVIDADE 2: VALIDADOR DE ACESSO AO PAINEL (&&, || E ===)
@@ -56,9 +70,21 @@ console.log("--- Atividade 1: Desconto Progressivo ---");
 console.log("--- Atividade 2: Validador de Acesso ---");
 
 // TODO: Escreva seu código da Atividade 2 abaixo:
+const usuarioLogado = true
+const idadeUsuario = 20
+const perfilUsuario = "ADMIN" 
+let temPermissao = perfilUsuario === "ADMIN" || perfilUsuario === "GERENTE"
 
+if (usuarioLogado === true && idadeUsuario >= 18 && perfilUsuario === "ADMIN" || perfilUsuario === "GERENTE"){
+    console.log("🔓 Acesso Autorizado ao Painel Administrativo!")
+}
+else{
+    console.log("Acesso Negado: Credenciais ou idade insuficientes.")
+}
 
-
+let tokenDigitado = "123"
+let tokenValido = 123
+console.log(tokenDigitado === tokenValido)
 
 
 // =============================================================================
@@ -80,7 +106,22 @@ console.log("--- Atividade 2: Validador de Acesso ---");
 console.log("--- Atividade 3: Rastreamento com Switch ---");
 
 // TODO: Escreva seu código da Atividade 3 abaixo:
-
+const statusPedido = "ENVIADO"
+switch (statusPedido) {
+case "CRIADO":
+console.log("📝 Pedido recebido! Aguardando confirmação de pagamento.");
+break;
+case "PAGO":
+console.log("💳 Pagamento confirmado! Produto sendo embalado.");
+break;
+case "ENVIADO":
+console.log("🚚 Pedido em transporte! A caminho do seu endereço.");
+break;
+case "ENTREGUE":
+console.log("📦 Pedido entregue com sucesso! Aproveite sua compra.")
+default:
+console.log("❓ Status desconhecido. Por favor, contate o suporte.");
+}
 
 
 
@@ -106,9 +147,13 @@ console.log("--- Atividade 3: Rastreamento com Switch ---");
 console.log("--- Atividade 4: Operador Ternário & Módulo ---");
 
 // TODO: Escreva seu código da Atividade 4 abaixo:
+const numero = 18
+const tipoNUmero = numero % 2 === 0 ? "PAR" : "IMPAR"
+console.log(`O ${numero} è classificado como ${tipoNUmero}`)
 
-
-
+const quantidadeEstoque = 0
+let avisoEstoque = quantidadeEstoque > 0 ? "✅ Em Estoque" : "❌ Esgotado"
+console.log(`Disponibilidade do Produto: ${avisoEstoque}`)
 
 
 console.log("=== FIM DA ATIVIDADE 20 ===");
